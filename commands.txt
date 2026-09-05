@@ -1,3 +1,4 @@
-pip install -r requirements.txt
-gunicorn --bind 0.0.0.0:5000 app:app
+
+curl -X POST 'http://<Public--Private-IP>:5000/employees' -H "Content-Type: application/json" -d '{"name": "Testing","department": "Software"}'
+
 
