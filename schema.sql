@@ -1,7 +1,11 @@
+use mysql;
+begin;
+create user 'appuser'@'%' identified with mysql_native_password by "Testing#123";
+grant all privileges on employee_db.* to 'appuser'@'%';
+flush privileges;
 
 
-USE python_employee_db;
-
+USE employee_db;
 CREATE TABLE employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -13,3 +17,5 @@ VALUES
 ('John', 'DevOps'),
 ('David', 'Platform'),
 ('Rahul', 'SRE');
+
+commit;
